@@ -1,0 +1,10 @@
+{
+  "name": "Central FPV — Batera",
+  "short_name": "Central FPV",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101820",
+  "theme_color": "#101820",
+  "lang": "pt-BR",
+  "icons": []
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Central FPV Batera — fichas, configurações e histórico dos drones.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Central FPV — Batera</title>
+<style>
+:root{color-scheme:dark;--bg:#101820;--panel:#1b2732;--muted:#9eb0bf;--line:#344453;--accent:#79d4c2;--warn:#ffd27a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f3f6f8;font:16px system-ui,-apple-system,sans-serif}
+header{padding:24px 18px 18px;background:linear-gradient(135deg,#1c3441,#101820);border-bottom:1px solid var(--line)}
+h1{font-size:23px;margin:0 0 5px}header p{margin:0;color:var(--muted);font-size:13px}
+main{max-width:850px;margin:auto;padding:16px}
+input,button{font:inherit}#search{width:100%;padding:14px;border-radius:12px;border:1px solid var(--line);background:#0c1319;color:white;margin:4px 0 14px}
+nav{display:flex;gap:8px;overflow:auto;padding-bottom:12px}nav button,.action{border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:var(--panel);color:white;white-space:nowrap}
+nav button.active{background:var(--accent);color:#10201e;border-color:var(--accent);font-weight:700}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;margin:10px 0}
+h2{font-size:18px;margin:0 0 10px}h3{font-size:15px;margin:14px 0 6px;color:var(--accent)}
+p,li{line-height:1.5;color:#e4ebf0}.muted{color:var(--muted);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:9px 5px;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{color:var(--muted);width:44%}
+.tag{display:inline-block;border:1px solid #52766f;color:var(--accent);padding:3px 8px;border-radius:20px;font-size:12px;margin:2px}
+.warn{color:var(--warn)}.hidden{display:none}
+footer{padding:20px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<header><h1>Central FPV — Batera</h1><p>Consulta rápida de drones, rádio, Betaflight e histórico técnico</p></header>
+<main>
+<input id="search" type="search" placeholder="Buscar: LQ, GPS Rescue, bateria, X150..." aria-label="Buscar na central">
+<nav id="tabs">
+<button class="active" data-tab="inicio">Visão geral</button><button data-tab="bee">Bee35 Wide</button><button data-tab="mario">Mário 5</button><button data-tab="radio">GX12 / ELRS</button><button data-tab="historico">Histórico</button>
+</nav>
+<section id="inicio" class="tab">
+<div class="card"><h2>Como usar</h2><p>Pesquise um termo ou abra a ficha de cada equipamento. Esta versão é uma base inicial offline; confirme os itens marcados como pendentes antes de voar.</p><span class="tag">Busca local</span><span class="tag">Funciona offline após instalação</span></div>
+<div class="card"><h2>Regras de segurança</h2><ul><li>Retire as hélices ao configurar no Betaflight.</li><li>Não confie em GPS Rescue sem Home Point válido e teste controlado.</li><li>Model Match precisa corresponder ao perfil correto.</li><li>LQ, RSSI dBm e RSNR são indicadores diferentes; avalie em conjunto.</li></ul></div>
+<div class="card"><h2>Estado dos dados</h2><p class="warn">Algumas configurações foram recuperadas de conversas e fotos. O que não foi confirmado está explicitamente marcado como pendente.</p></div>
+</section>
+<section id="bee" class="tab hidden">
+<div class="card"><h2>Bee35 Wide</h2><span class="tag">SpeedyBee F405 V5</span><span class="tag">ESC 55A OX32</span><span class="tag">DJI O4 Air Unit Wide</span>
+<table>
+<tr><td>Modelo</td><td>Bee35 Wide (não Pro)</td></tr><tr><td>Controladora</td><td>SpeedyBee F405 V5</td></tr><tr><td>ESC</td><td>SpeedyBee 55A, firmware OX32</td></tr><tr><td>Hélices</td><td>HQProp T3.5×2.5×3</td></tr><tr><td>Bateria de freestyle</td><td>Tattu 6S 1050 mAh</td></tr><tr><td>Bateria cinematográfica</td><td>6S 1500 mAh</td></tr><tr><td>VTX</td><td>DJI O4 Air Unit Wide (não Pro)</td></tr><tr><td>Receptor</td><td>GEPRC GemX RX — identificado no menu do GX12</td></tr><tr><td>Betaflight</td><td>Versão exata atual: confirmar</td></tr><tr><td>Mixer</td><td>EZLANDING — confirmado no CLI</td></tr>
+</table>
+<h3>GX12 no perfil Bee35 — última tela</h3><table>
+<tr><td>Packet Rate</td><td>X150</td></tr><tr><td>Telemetry Ratio</td><td>Std 1:32</td></tr><tr><td>Switch Mode</td><td>Wide</td></tr><tr><td>Antenna Mode</td><td>Gemini</td></tr><tr><td>Link Mode</td><td>Normal</td></tr><tr><td>Model Match</td><td>ID 1</td></tr><tr><td>TX Power</td><td>500 mW</td></tr>
+</table>
+<h3>GPS Rescue — valores vistos na tela</h3><table>
+<tr><td>Fase 1</td><td>1,5 s</td></tr><tr><td>Satélites mínimos</td><td>8 (não garante posição confiável)</td></tr><tr><td>Distância mínima da base</td><td>15 m</td></tr><tr><td>Altitude adicional</td><td>10 m</td></tr><tr><td>Subida / retorno</td><td>7,5 m/s / 7,5 m/s</td></tr><tr><td>Inclinação máxima</td><td>50°</td></tr><tr><td>Descida</td><td>1,5 m/s</td></tr><tr><td>Hover throttle</td><td>1275 — validar em teste controlado</td></tr><tr><td>Armar sem GPS</td><td>Desativado na última foto</td></tr></table>
+<h3>OSD / alertas</h3><p>Indicadores escolhidos: Qualidade da conexão (LQ), RSSI, RSSI dBm e RSNR. Alerta LQ ajustado para 60 na tela mostrada. Limite RSSI dBm ainda precisa ser validado para GemX.</p>
+</div>
+<section id="mario" class="tab hidden">
+<div class="card"><h2>Mário 5</h2><p class="warn">Ficha parcial. Não copiar automaticamente valores do Bee35.</p><table>
+<tr><td>GX12 Packet Rate</td><td>X150 (foto)</td></tr><tr><td>Telemetry Ratio</td><td>Std 1:16 (foto)</td></tr><tr><td>Switch Mode</td><td>Wide</td></tr><tr><td>Antenna Mode</td><td>Gemini</td></tr><tr><td>Link Mode</td><td>Normal</td></tr><tr><td>Model Match</td><td>ID 0 (foto/histórico; confirmar no receptor)</td></tr><tr><td>TX Power</td><td>500 mW (foto/histórico; confirmar)</td></tr><tr><td>Receptor exato</td><td>Pendente de confirmação</td></tr></table></div>
+</section>
+<section id="radio" class="tab hidden">
+<div class="card"><h2>RadioMaster GX12 / ExpressLRS</h2><p>Perfis separados por aeronave. Bee35 usa Model Match ID 1; Mário 5 usa ID 0, conforme telas registradas.</p><h3>Indicadores para acompanhar</h3><table><tr><td>LQ</td><td>Qualidade do link; acompanhar quedas e tendência.</td></tr><tr><td>RSSI dBm</td><td>Potência recebida; valor mais próximo de zero é mais forte.</td></tr><tr><td>RSNR</td><td>Relação sinal/ruído; ajuda a avaliar interferência.</td></tr></table><p class="warn">Não há distância fixa garantida pelo Gemini. Xrossband melhora redundância/resiliência em certas condições, não promete metros adicionais.</p></div>
+</section>
+<section id="historico" class="tab hidden">
+<div class="card"><h2>Histórico de alterações</h2><ul><li>Bee35: Throttle Burst alterado de 5% para 10%.</li><li>Bee35: Linear Input alterado de 0% para 35%.</li><li>Bee35: alerta RSSI dBm desativado anteriormente para evitar OSD piscando; alertas foram revistos depois.</li><li>Bee35: mixer_type alterado de LEGACY para EZLANDING; confirmação CLI mostrou EZLANDING.</li><li>Bee35: GX12 perfil ajustado para X150 / Gemini / ID 1 / 500 mW.</li><li>Bee35: receptor identificado no menu como GEPRC GemX RX; conexão C observada.</li></ul></div>
+</section>
+</main>
+<footer>Central FPV Batera • Base inicial — confirme sempre a configuração real no equipamento antes de voar.</footer>
+<script>
+const buttons=[...document.querySelectorAll('nav button')], sections=[...document.querySelectorAll('.tab')];
+buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.toggle('active',x===b));sections.forEach(s=>s.classList.toggle('hidden',s.id!==b.dataset.tab));document.querySelector('#search').value='';}));
+document.querySelector('#search').addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();if(!q){sections.forEach(s=>s.classList.add('hidden'));document.querySelector('#inicio').classList.remove('hidden');buttons.forEach(b=>b.classList.toggle('active',b.dataset.tab==='inicio'));return;}sections.forEach(s=>s.classList.toggle('hidden',!s.innerText.toLowerCase().includes(q)));buttons.forEach(b=>b.classList.toggle('active',false));});
+if('serviceWorker' in navigator && location.protocol!=='file:'){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+</script>
+</body></html>
